@@ -1,6 +1,6 @@
 NAME	=	libasm
-SRC		=	hello.s
-OBJ		=	$(SRC:.s=.o)
+SRC		=	hola.asm
+OBJ		=	$(SRC:.asm=.o)
 
 all: $(NAME)
 

@@ -1,3 +1,5 @@
+/!\ Passer en .s au dernier moment (je reste en .asm pour avoir la synthaxe visuelle) /!\
+
 Pour un systeme en  bits, il y a les Register Operands suivants :
 Les 8 premiers ont egalement de noms alternatifs
 Il y en a 16 au total
