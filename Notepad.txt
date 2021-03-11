@@ -1,0 +1,17 @@
+Pour un systeme en  bits, il y a les Register Operands suivants :
+Les 8 premiers ont egalement de noms alternatifs
+Il y en a 16 au total
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10  R11  R12  R13  R14  R15
+RAX RCX RDX RBX RSP RBP RSI RDI
+
+Instructions Principales :
+mov x, y    x ← y
+and x, y	x ← x and y
+or x, y     x ← x or y
+xor x, y	x ← x xor y
+add x, y	x ← x + y
+sub x, y	x ← x – y
+inc x      	x ← x + 1
+dec x   	x ← x – 1
+syscall	    Invoke an operating system routine
+db	        A pseudo-instruction that declares bytes that will be in memory when the program runs
