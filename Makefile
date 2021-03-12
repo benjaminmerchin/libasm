@@ -1,5 +1,5 @@
-NAME	=	libasm
-SRC		=	hola.asm
+NAME	=	YouTube
+SRC		=	youtube.asm
 OBJ		=	$(SRC:.asm=.o)
 
 all: $(NAME)

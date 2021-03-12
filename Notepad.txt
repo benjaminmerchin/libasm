@@ -17,3 +17,10 @@ inc x      	x ← x + 1
 dec x   	x ← x – 1
 syscall	    Invoke an operating system routine
 db	        A pseudo-instruction that declares bytes that will be in memory when the program runs
+
+Les six premiers parametres entiers sont passes dans rdi, rsi, rdx, rcx, r8 et r9 dans cet ordre.
+Les autres sont passes par la pile.
+Ces registres, ainsi que rax, r10 et r11 sont d´etruits par les appels de fonctions.
+Les registres callee-save sont rbx, r12, ... , r15.
+Les param`etres flottants sont pass´es dans xmm0, xmm1,..., xmm7.
+
