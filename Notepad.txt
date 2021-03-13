@@ -6,7 +6,7 @@ Il y en a 16 au total
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10  R11  R12  R13  R14  R15
 RAX RCX RDX RBX RSP RBP RSI RDI
 
-Instructions Principales :
+INSTRUCTIONS Principales :
 mov x, y    x ← y
 and x, y	x ← x and y
 or x, y     x ← x or y
@@ -24,3 +24,38 @@ Ces registres, ainsi que rax, r10 et r11 sont d´etruits par les appels de fonct
 Les registres callee-save sont rbx, r12, ... , r15.
 Les param`etres flottants sont pass´es dans xmm0, xmm1,..., xmm7.
 
+Les COMPARATEURS rangent le resultat de la comparaison dans dest
+and dest, src
+or
+xor
+
+add rax, rbx		; xax = xax + xbx
+sub
+
+FLAGS (prenent des valeurs en fonctin du resultat de l'operation au dessus)
+CF = carry (1 yes, 0 no)
+OF = overflow Flag
+ZF = zero, (1 yes, 0 no)
+SF = negative (1 yes, 0 no)
+PF = parity [...]
+
+JUMP			;possibile d'ajouter un n pour avoir l'oppose
+jmp labell		;teleporte au labell
+je	labell		;si les operations de la ligne au dessus sont =, jump
+jne	labell		;jump non equal (check les glags)
+ja	labell		; jump above
+[...]
+
+CALL
+call label		;reviens a la suite une fois le call fini, corresponx en c aux appels de fonctions externes
+<=>
+push rip	; rip est le pointeur d'instructions, il garde l'addresse de l'instruction
+jmp label	; ensuite on jump
+
+ret			;reviens a la suite
+<=>
+pop rip		;remove l'addr de la next line de code et reviens a la suite du call
+
+COMPARE
+cmp rax, rbx		;update les flags
+ja label			;si rax est plus grand que rbx, jump
