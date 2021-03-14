@@ -1,6 +1,6 @@
 NAME	=	YouTube
-SRC		=	youtube.asm
-OBJ		=	$(SRC:.asm=.o)
+SRC		=	youtube.s
+OBJ		=	$(SRC:.s=.o)
 
 all: $(NAME)
 
