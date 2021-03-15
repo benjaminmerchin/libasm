@@ -12,7 +12,7 @@ _start:						; demarrage du programme
 	mov	ebx, 1			 	;  pour la sortie standard
 	mov	ecx, msg
 	mov edx, msg_L
-	int 80h					;code pour executer // 0x80
+	int 80h					;code pour executer, call kernel // 0x80
 
 	mov eax, 1
 	mov	ebx, 0

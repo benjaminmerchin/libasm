@@ -54,6 +54,6 @@ ret			;reviens a la suite
 <=>
 pop rip		;remove l'addr de la next line de code et reviens a la suite du call
 
-COMPARE
+IF
 cmp rax, rbx		;update les flags
 ja label			;si rax est plus grand que rbx, jump
