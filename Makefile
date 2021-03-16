@@ -1,5 +1,5 @@
-NAME	=	YouTube
-SRC		=	youtube.s
+NAME	=	a.out
+SRC		=	hola.s
 OBJ		=	$(SRC:.s=.o)
 
 all: $(NAME)
@@ -9,10 +9,10 @@ $(NAME):
 	@ld $(OBJ) -o $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

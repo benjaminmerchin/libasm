@@ -13,4 +13,4 @@ main:                                       ; This is called by the C library st
           call      puts                    ; puts(message)
           ret                               ; Return from main back into C library wrapper
 message:
-          db        "Hola, mundo", 0        ; Note strings must be terminated with 0 in C
+          db        "Hola, mundo :0", 0     ; Note strings must be terminated with 0 in C

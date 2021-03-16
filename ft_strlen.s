@@ -10,14 +10,11 @@
 
 ; rax = i
 
-			section	.data
-
-			section .bss
-			rax				255
-
-			section .text
+	global ft_strlen
+	section .text
 ft_strlen:
 	xor rdi, rdi
+	
 
 loop
 
