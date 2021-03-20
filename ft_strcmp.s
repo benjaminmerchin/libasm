@@ -1,13 +1,4 @@
 %include "linux64.inc"
-;ft_strlen:
-;	xor		rax, rax ;set rax to 0
-;	dec		rax;
-;
-;_loop:
-;	inc		rax ;so rax is at 0 at the beginning of the first loop
-;	cmp		byte [rdi + rax], 0 ;rdi is used to pass the first argument (second would be rsi then rdx, rcx, r8 and r9)
-;	jne		_loop
-;	ret
 
     global ft_strcmp
 
@@ -18,10 +9,19 @@ ft_strcmp:
 
 _loop:
     inc     rax
-    cmp     byte[rdi + rax], byte [rsi + rax]
+	mov		r8b, [rdi + rax]
+    mov     r9b, [rsi + rax]
+	cmp		r8b, 0
+	je		_end
+	cmp		r9b, 0
+	je		_end
+	cmp		r8b, r9b
     je      _loop
 
-    mov     rcx, [rdi + rax]
-    mov     rax, [rsi + rax]
-    sub     rax, rcx
+_end:
+	xor     rax, rax ; useless ?
+	xor     rbx, rbx ; useless ?
+	mov     al, r8b
+	mov		bl, r9b
+	sub		rax, rbx
     ret

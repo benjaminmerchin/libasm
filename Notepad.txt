@@ -59,3 +59,9 @@ cmp rax, rbx		;update les flags
 ja label			;si rax est plus grand que rbx, jump
 
 nasm -felf64 ft_strcmp.s && nasm -felf64 ft_strlen.s && gcc main.c ft_strlen.o ft_strcmp.o && ./a.out
+nasm -felf64 ft_strcmp.s && nasm -felf64 ft_write.s && nasm -felf64 ft_strlen.s && gcc main.c ft_strlen.o ft_strcmp.o ft_write.o && ./a.out
+
+Faire dans l'ordre suivant : 
+1) ft_strlen & ft_strcmp (utilisation basique)
+2) ft_write & ft_read (rajoute la gestion des erreurs)
+3) ft_strdup & ft_strcpy (rajoute l'utilisation de fonctions externes)
