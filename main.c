@@ -8,12 +8,27 @@ void	ok_or_error(long expected, long result)
 		printf("ERROR\n");
 }
 
+void 	clean_buff(char buff[1000])
+{
+	int i;
+
+	i = 0;
+	while (i < 1000)
+	{
+		buff[i] = 0;
+		i++;
+	}
+}
+
 int		main(void)
 {
 	int i;
 	int j;
 	char *s1;
 	char *s2;
+	int fd;
+	char buff[1000];
+	char *source;
 
 	/*printf("LIBASM - Testor\n");
 	printf("-----------------------------\n");
@@ -82,8 +97,55 @@ int		main(void)
 	ft_write(1, s1, i);
 	write(1, "\n", 1);
 
-	printf("-----------------------------\n");*/
+	printf("-----------------------------\n");
 	printf("ft_read\n");
-	
+
+	i = 0;
+	fd = open("main.c", O_RDONLY);
+	buff[i] = '\0';
+	read(fd, buff, i);
+	printf("Expected: %s\n", buff);
+	close(fd);
+	fd = open("main.c", O_RDONLY);
+	buff[i] = '\0';
+	ft_read(fd, buff, i);
+	printf("Result  : %s\n", buff);
+	close(fd);
+
+	i = 5;
+	fd = open("main.c", O_RDONLY);
+	buff[i] = '\0';
+	read(fd, buff, i);
+	printf("Expected: %s\n", buff);
+	close(fd);
+	fd = open("main.c", O_RDONLY);
+	buff[i] = '\0';
+	ft_read(fd, buff, i);
+	printf("Result  : %s\n", buff);
+	close(fd);
+
+	i = 15;
+	fd = open("main.c", O_RDONLY);
+	buff[i] = '\0';
+	read(fd, buff, i);
+	printf("Expected: %s\n", buff);
+	close(fd);
+	fd = open("main.c", O_RDONLY);
+	buff[i] = '\0';
+	ft_read(fd, buff, i);
+	printf("Result  : %s\n", buff);
+	close(fd);
+
+	printf("-----------------------------\n");*/
+	printf("ft_strcpy\n");
+
+	source = "abcdef";
+	s1 = strcpy(buff, source);
+	printf("Expected: %s\n", s1);
+	clean_buff(buff);
+	s2 = strcpy(buff, source);
+	printf("Result  : %s\n", s2);
+
+
 	return (0);
 }

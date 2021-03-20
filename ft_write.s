@@ -1,6 +1,6 @@
 %include "linux64.inc"
 
-; in rdi we have the output number
+; in rdi we have the fd
 ; in rsi we have the string to print
 ; in rdx we have the string length
 
@@ -10,7 +10,7 @@
 	xor		rax, rax ; we clean rax, check if I can remove this
 ft_write:
 
-_loop:
+_core:
 	mov rax, 4 				;ID to write from the table
 	mov	rbx, rdi			;  pour la sortie standard
 	mov	rcx, rsi
