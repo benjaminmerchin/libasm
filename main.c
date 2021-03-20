@@ -140,11 +140,11 @@ int		main(void)
 	printf("ft_strcpy\n");
 
 	source = "abcdef";
-	s1 = strcpy(buff, source);
+/*	s1 = strcpy(buff, source);
 	printf("Expected: %s\n", s1);
-	clean_buff(buff);
-	s2 = strcpy(buff, source);
-	printf("Result  : %s\n", s2);
+	clean_buff(buff);*/
+	s2 = ft_strcpy(buff, source);
+	//printf("Result  : %s\n", s2);
 
 
 	return (0);
