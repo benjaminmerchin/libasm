@@ -1,5 +1,5 @@
 NAME	=	a.out
-SRC		=	hola.s
+SRC		=	youtube.s
 OBJ		=	$(SRC:.s=.o)
 
 all: $(NAME)

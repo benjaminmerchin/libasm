@@ -18,7 +18,7 @@ db	        A pseudo-instruction that declares bytes that will be in memory when 
 
 Les six premiers parametres entiers sont passes dans rdi, rsi, rdx, rcx, r8 et r9 dans cet ordre.
 Les autres sont passes par la pile.
-Ces registres, ainsi que rax, r10 et r11 sont d´etruits par les appels de fonctions.
+Ces registres, ainsi que rax, r10 et r11 sont detruits par les appels de fonctions.
 Les registres callee-save sont rbx, r12, ... , r15.
 Les param`etres flottants sont pass´es dans xmm0, xmm1,..., xmm7.
 
@@ -57,3 +57,5 @@ pop rip		;remove l'addr de la next line de code et reviens a la suite du call
 IF
 cmp rax, rbx		;update les flags
 ja label			;si rax est plus grand que rbx, jump
+
+nasm -felf64 ft_strcmp.s && nasm -felf64 ft_strlen.s && gcc main.c ft_strlen.o ft_strcmp.o && ./a.out

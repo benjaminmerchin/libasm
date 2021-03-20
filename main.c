@@ -1,6 +1,6 @@
 #include "libasm.h"
 
-void	ok_or_error(int expected, int result)
+void	ok_or_error(long expected, long result)
 {
 	if (result == expected)
 		printf("OK\n");
@@ -11,16 +11,30 @@ void	ok_or_error(int expected, int result)
 int		main(void)
 {
 	int i;
+	int j;
 
 	printf("LIBASM - Testor\n");
 	printf("-----------------------------\n");
 	printf("ft_strlen\n");
-	printf("Normalement 0: %d ", ft_strlen(""));
-	ok_or_error(0, ft_strlen(""))
-	printf("Normalement 1: %d ", ft_strlen("a"));
-	ok_or_error(1, ft_strlen(""))
-	printf("Normalement 11: %d ", ft_strlen("1234567890 "));
-	ok_or_error(11, ft_strlen(""))
+
+	i = strlen("");
+	j = ft_strlen("");
+	printf("Expected %d: %d ", i, j);
+	ok_or_error(i, j);
+
+	i = strlen(" ");
+	j = ft_strlen(" ");
+	printf("Expected %d: %d ", i, j);
+	ok_or_error(i, j);
+
+	i = strlen("1234567890 ");
+	j = ft_strlen("1234567890 ");
+	printf("Expected %d: %d ", i, j);
+	ok_or_error(i, j);
+
 	printf("-----------------------------\n");
+	printf("ft_strcmp\n");
+
+
 	return (0);
 }
