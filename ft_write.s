@@ -11,14 +11,10 @@
 ft_write:
 
 _core:
-	mov rax, 4 				;ID to write from the table
-	mov	rbx, rdi			;  pour la sortie standard
+	mov rax, 1 				;ID to write from the table
+	mov	rbx, rdi			;for the standard output
 	mov	rcx, rsi
 ;	mov rdx, rdx			;Not usefull because rdx is already at the right place		
-	int 80h					;code to execute kernell // 0x80
-
-;	mov eax, 1				;
-;	mov	ebx, 0
-;	int 80h
+	syscall					;code to execute kernell
 
 	ret

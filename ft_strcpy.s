@@ -13,11 +13,13 @@ ft_strcpy:
 
 _loop:
 	cmp		byte [rsi + rax], 0
-	inc		rax
-	jne		_loop
+	mov		r8b , byte [rsi + rax]
+	mov		byte [rdi + rax], r8b
 	je		_end
+	inc		rax
+	jmp		_loop
 
 _end:
 	xor		rax, rax
-	mov		rax, rdi
+	mov		rax, r9
 	ret

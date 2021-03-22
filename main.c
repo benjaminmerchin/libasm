@@ -136,16 +136,43 @@ int		main(void)
 	printf("Result  : %s\n", buff);
 	close(fd);
 
-	printf("-----------------------------\n");*/
+	printf("-----------------------------\n");
 	printf("ft_strcpy\n");
+	char *b = malloc(sizeof(char) * 1000);
 
 	source = "abcdef";
-/*	s1 = strcpy(buff, source);
+	s1 = strcpy(buff, source);
 	printf("Expected: %s\n", s1);
-	clean_buff(buff);*/
-	s2 = ft_strcpy(buff, source);
-	//printf("Result  : %s\n", s2);
+	clean_buff(buff);
+	s2 = ft_strcpy(b, source);
+	printf("Result  : %s\n", s2);
 
+	source = "";
+	s1 = strcpy(buff, source);
+	printf("Expected: %s\n", s1);
+	clean_buff(buff);
+	s2 = ft_strcpy(b, source);
+	printf("Result  : %s\n", s2);
 
+	source = "asdf8yn0as_09a8sda980--098";
+	s1 = strcpy(buff, source);
+	printf("Expected: %s\n", s1);
+	clean_buff(buff);
+	s2 = ft_strcpy(b, source);
+	printf("Result  : %s\n", s2);
+
+	free(b);
+	printf("-----------------------------\n");*/
+	printf("ft_strdup\n");
+
+	source ="abc";
+	s1 = strdup(source);
+	s2 = ft_strdup(source);
+	printf("Expected: %s\n", s1);
+	printf("Result  : %s\n", s2);
+	//free(s1);
+	//free(s2);
+
+	//printf("-----------------------------\n");
 	return (0);
 }
