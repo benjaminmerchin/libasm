@@ -165,13 +165,19 @@ int		main(void)
 	printf("-----------------------------\n");*/
 	printf("ft_strdup\n");
 
-	source ="abc";
+	source = "abc";
+	char *c = malloc(sizeof(5));
+	c[0] = 'a';
+	c[1] = 'b';
+	c[2] = 'c';
+	c[3] = 'd';
+	c[4] = '\0';
 	s1 = strdup(source);
-	s2 = ft_strdup(source);
+	s2 = ft_strdup(c);
 	printf("Expected: %s\n", s1);
 	printf("Result  : %s\n", s2);
-	//free(s1);
-	//free(s2);
+	free(s1);
+	free(s2);
 
 	//printf("-----------------------------\n");
 	return (0);

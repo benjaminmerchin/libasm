@@ -5,15 +5,16 @@
 	global ft_strdup
     extern  malloc
     extern  ft_strlen
+	extern	ft_strcpy
 
 	section .text
 ft_strdup:
-	xor		rax, rax ;set rax to 0
-	ret
+;	xor		rax, rax ;set rax to 0
+	
 _len:
     push    rdi	;we need to push the arguments on the stack
-    call    ft_strlen ;now rax has the len
-    pop     rdi
+    call    ft_strlen ;now rax has the len, rdi is also already on the stack just bellow the
+ ;   pop     rdi
 	ret
 
 _malloc:

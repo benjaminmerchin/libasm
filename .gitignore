@@ -1,3 +1,4 @@
+libasm.a
 a.out
 libasm
 *.o
