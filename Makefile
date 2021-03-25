@@ -8,7 +8,7 @@ $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
-testor: fclean $(NAME)
+test: fclean $(NAME)
 	@gcc main.c $(NAME) -o libasm
 	@./libasm
 
