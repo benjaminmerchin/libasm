@@ -172,7 +172,7 @@ int		main(void)
 	c[2] = 'c';
 	c[3] = 'd';
 	c[4] = '\0';
-	s1 = ft_strdup(source);
+	s1 = strdup(c);
 	s2 = ft_strdup(c);
 	printf("Expected: %s\n", s1);
 	printf("Result  : %s\n", s2);
@@ -180,6 +180,6 @@ int		main(void)
 	free(s2);
 	free(c);
 
-	//printf("-----------------------------\n");
+	printf("-----------------------------\n");
 	return (0);
 }
