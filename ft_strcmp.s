@@ -1,6 +1,5 @@
 	global ft_strcmp
 
-	section .text
 ft_strcmp:
 	xor		rax, rax ;set rax to 0
 	dec		rax

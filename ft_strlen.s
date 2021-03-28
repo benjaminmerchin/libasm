@@ -1,6 +1,5 @@
 	global ft_strlen
 
-	section .text
 ft_strlen:
 	xor		rax, rax ;set rax to 0
 	dec		rax;

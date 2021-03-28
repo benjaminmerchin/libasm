@@ -3,7 +3,6 @@
 
 	global ft_strcpy
 
-	section .text
 ft_strcpy:
 	xor		rax, rax ;clean rax
 	xor		r9, r9 ;clean r9

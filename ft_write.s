@@ -4,8 +4,7 @@
 
 	global	ft_write
 	extern	__errno_location
-
-	section .text
+	
 ft_write:
 
 _core:
