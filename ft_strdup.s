@@ -1,30 +1,23 @@
-%include "linux64.inc"
-
 ; in rdi we have the string source
 ; we need to push what we want to save
 ; only rbp, rbx, r12, r13, r14, r15 are safe and don't need to be push
 
-	global ft_strdup
-    extern  malloc
-    extern  ft_strlen
-	extern	ft_strcpy
-
-	section .text
+	global	ft_strdup
+    extern	malloc, ft_strlen, ft_strcpy
 	
 ft_strdup:
 	push	rbp ;calling convension to preserve rbp
-;	xor		rax, rax ;set rax to 0
 	
 _len:
-    call    ft_strlen ;now rax has the len
-    push    rdi	;we need to push the arguments on the stack
+    push    rdi	;we can push the arguments on the stack
+    call    ft_strlen ;now rax has the len ; the source string is already in rdi
 	xor		rdi, rdi
 
 _malloc:
 	inc		rax	;we need to malloc the size for the final 0
 	mov		rdi, rax
-	call	malloc ;we now have the new string in rax
-
+	call	malloc wrt ..plt;we now have the new string in rax
+; wrt ..plt is used to link external function... I lost so much time to find this
 
 ; for ft_strcpy we want
 ; first the destination buffer in rdi

@@ -1,5 +1,3 @@
-%include "linux64.inc"
-
 	global ft_strcmp
 
 	section .text

@@ -1,5 +1,3 @@
-%include "linux64.inc"
-
 ; in rdi we have the destination
 ; in rsi we have the string source
 

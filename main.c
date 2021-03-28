@@ -30,7 +30,7 @@ int		main(void)
 	char buff[1000];
 	char *source;
 
-	/*printf("LIBASM - Testor\n");
+	printf("LIBASM - Testor\n");
 	printf("-----------------------------\n");
 	printf("ft_strlen\n");
 
@@ -76,24 +76,30 @@ int		main(void)
 	printf("-----------------------------\n");
 	printf("ft_write\n");
 
-	s1 = "ab";
+	s1 = "";
 	i = strlen(s1);
+	write(1, "Expected: ", 10);
 	write(1, s1, i);
-	write(1, " | ", 3);
+	write(1, "\n", 1);
+	write(1, "Result  : ", 10);
 	ft_write(1, s1, i);
 	write(1, "\n", 1);
 
 	s1 = "Hello World!";
 	i = strlen(s1);
+	write(1, "Expected: ", 10);
 	write(1, s1, i);
-	write(1, " | ", 3);
+	write(1, "\n", 1);
+	write(1, "Result  : ", 10);
 	ft_write(1, s1, i);
 	write(1, "\n", 1);
 
 	s1 = "(*&^$@*(& (*";
 	i = strlen(s1);
+	write(1, "Expected: ", 10);
 	write(1, s1, i);
-	write(1, " | ", 3);
+	write(1, "\n", 1);
+	write(1, "Result  : ", 10);
 	ft_write(1, s1, i);
 	write(1, "\n", 1);
 
@@ -162,23 +168,32 @@ int		main(void)
 	printf("Result  : %s\n", s2);
 
 	free(b);
-	printf("-----------------------------\n");*/
+	printf("-----------------------------\n");
 	printf("ft_strdup\n");
 
-	source = "abcd";
-	char *c = malloc(sizeof(5));
-	c[0] = 'a';
-	c[1] = 'b';
-	c[2] = 'c';
-	c[3] = 'd';
-	c[4] = '\0';
-	s1 = strdup(c);
-	s2 = ft_strdup(c);
+	source = "";
+	s1 = strdup(source);
+	s2 = ft_strdup(source);
 	printf("Expected: %s\n", s1);
 	printf("Result  : %s\n", s2);
 	free(s1);
 	free(s2);
-	free(c);
+	
+	source = "abcd";
+	s1 = strdup(source);
+	s2 = ft_strdup(source);
+	printf("Expected: %s\n", s1);
+	printf("Result  : %s\n", s2);
+	free(s1);
+	free(s2);
+
+	source = "da eao8fy7 0a89sdf 09asdjf09 'das ]'";
+	s1 = strdup(source);
+	s2 = ft_strdup(source);
+	printf("Expected: %s\n", s1);
+	printf("Result  : %s\n", s2);
+	free(s1);
+	free(s2);
 
 	printf("-----------------------------\n");
 	return (0);
