@@ -58,11 +58,6 @@ IF
 cmp rax, rbx		;update les flags
 ja label			;si rax est plus grand que rbx, jump
 
-nasm -felf64 ft_strcmp.s && nasm -felf64 ft_strlen.s && gcc main.c ft_strlen.o ft_strcmp.o && ./a.out
-nasm -felf64 ft_strcmp.s && nasm -felf64 ft_write.s && nasm -felf64 ft_strlen.s && gcc main.c ft_strlen.o ft_strcmp.o ft_write.o && ./a.out
-nasm -felf64 ft_strcmp.s && nasm -felf64 ft_write.s && nasm -felf64 ft_strlen.s && nasm -felf64 ft_read.s && gcc main.c ft_strlen.o ft_strcmp.o ft_write.o ft_read.o && ./a.out
-nasm -felf64 ft_strcmp.s && nasm -felf64 ft_write.s && nasm -felf64 ft_strlen.s && nasm -felf64 ft_read.s && nasm -felf64 ft_strdup.s && nasm -felf64 ft_strcpy.s && gcc main.c ft_strlen.o ft_strcmp.o ft_write.o ft_read.o ft_strcpy.o ft_strdup.o && ./a.out
-
 Faire dans l'ordre suivant : 
 1) ft_strlen & ft_strcmp & ft_strcpy (utilisation basique)
 2) ft_write & ft_read (rajoute la gestion des erreurs)
